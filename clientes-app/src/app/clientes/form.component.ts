@@ -5,10 +5,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 import swal from 'sweetalert2';
 import { Observable } from 'rxjs';
 import { Region } from './region';
+import { MatDatepickerInput, MatDatepickerToggle, MatDatepicker } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html'})
+    selector: 'app-form',
+    templateUrl: './form.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor, FormsModule, MatDatepickerInput, MatDatepickerToggle, MatDatepicker]
+})
 export class FormComponent implements OnInit {
 
   public cliente :Cliente =new Cliente()

@@ -4,11 +4,14 @@ import { ClienteService } from '../cliente.service';
 import swal from 'sweetalert2';
 import { HttpEventType } from '@angular/common/http';
 import { ModalService } from './modal.service';
+import { NgIf, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'detalle-cliente',
-  templateUrl: './detalle.component.html',
-  styleUrls: ['./detalle.component.css']
+    selector: 'detalle-cliente',
+    templateUrl: './detalle.component.html',
+    styleUrls: ['./detalle.component.css'],
+    standalone: true,
+    imports: [NgIf, NgStyle]
 })
 export class DetalleComponent implements OnInit {
 

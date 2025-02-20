@@ -1,9 +1,18 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { VirtualTimeScheduler } from 'rxjs';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'paginator-nav',
-  templateUrl: './paginator.component.html',
+    selector: 'paginator-nav',
+    templateUrl: './paginator.component.html',
+    standalone: true,
+    imports: [
+        NgIf,
+        RouterLink,
+        NgClass,
+        NgFor,
+    ],
 })
 export class PaginatorComponent implements OnInit,OnChanges {
 

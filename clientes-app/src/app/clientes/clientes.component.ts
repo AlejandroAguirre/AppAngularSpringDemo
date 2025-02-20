@@ -4,18 +4,28 @@ import { ClienteService } from './cliente.service';
 import swal from 'sweetalert2';
 import { noop } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ModalService } from './detalle/modal.service';
 
 
 import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { PaginatorComponent } from '../paginator/paginator.component';
+import { DetalleComponent } from './detalle/detalle.component';
+import { NgIf, NgFor } from '@angular/common';
 
 
 @Component({
-  selector: 'app-clientes',
-  templateUrl: './clientes.component.html',
-  //styleUrls: ['./clientes.component.css']
+    selector: 'app-clientes',
+    templateUrl: './clientes.component.html',
+    standalone: true,
+    imports: [
+        NgIf,
+        DetalleComponent,
+        RouterLink,
+        NgFor,
+        PaginatorComponent,
+    ],
 })
 export class ClientesComponent implements OnInit {
 
